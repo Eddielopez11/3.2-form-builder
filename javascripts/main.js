@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
     formHTML += "<form>";
     formItems.forEach(function(item){
       if (item.type === "text" || item.type === "email" || item.type === "tel"){
-        formHTML += `<input type="text" name="${item.id}" value="${item.label}">`;
+        formHTML += `<input type="text" name="${item.id}" placeholder="${item.label}">`;
       }else if (item.type === "select"){
         formHTML += `<select name="${item.id}">`;
           item.options.forEach(function(opt){
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
           });
         formHTML += `</select>`;
       }else{
-        formHTML += `<textarea name="${item.id}" rows="4" cols="40">${item.label}</textarea>`;
+        formHTML += `<textarea name="${item.id}" rows="4" cols="40" placeholder="${item.label}"></textarea>`;
       }
     })
     formHTML += "</form>";
